@@ -1,0 +1,35 @@
+##################################-- KATALOG --##################################
+
+###create a Produkt with payload
+POST http://localhost:9292/katalog/create
+Content-Type: application/json
+{
+  "Name": "WINORA",
+  "Preis": "2600",
+  "Anzahl": 182,
+  "Kategorie": "E_BIKE",
+  "Verfuegbarkeit": "Verfuegbar",
+}
+####delete an existing Produkt
+###/katalog/delete/{produktId}
+DELETE http://localhost:9292/bestellung/delete/--
+
+###update the status of the produkt
+###/katalog/update/{produktId}
+PUT http://localhost:9292/katalog/update/{produktId}
+Content-Type: application/json
+{
+  "Name": "WINORA",
+  "Preis": "2600",
+  "Anzahl": 182,
+  "Kategorie": "E_BIKE",
+  "Verfuegbarkeit": "NICHT_VERFUEGBAR",
+}
+
+
+###get all existing Produkts in DB
+GET http://localhost:9090/katalog
+
+###get a Produkt based on its id
+###/katalog/{produktId}
+GET http://localhost:9292/katalog/{produktId}

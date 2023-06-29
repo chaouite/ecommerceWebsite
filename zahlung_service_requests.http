@@ -1,0 +1,29 @@
+##################################-- Zahlung --##################################
+
+###create a Zahlung with payload
+POST http://localhost:9191/zahlung/process
+Content-Type: application/json
+{
+  "bestellungId":"--BE--STE--LL--UNG--",
+  "gesamtpreis":800,
+  "kreditKarte":
+  {
+    "number":"123456789",
+    "holder":"Leo Messi",
+    "expDate":"09/25",
+    "cvv":"456"
+  }
+}
+
+####delete an existing Zahlung
+###/zahlung/cancel/{zahlungId}
+DELETE http://localhost:9191/zahlung/cancel/--
+
+###get zahlung in DB based on zahlungId
+###/zahlung/{zahlungId}
+GET http://localhost:9191/zahlung/--
+
+###get zahlung in DB based on bestellungId
+###/zahlung/{bestellungId}
+GET http://localhost:9191/zahlung/--
+
